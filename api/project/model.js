@@ -20,3 +20,5 @@ function insert(project) {
       return findById(ids[0]);
     });
 }
+
+module.exports = { find, findById, insert };
