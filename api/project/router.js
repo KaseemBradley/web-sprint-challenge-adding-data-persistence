@@ -20,4 +20,17 @@ router.get("/", (req, res) => {
     });
 });
 
+router.post("/", (req, res) => {
+  Projects.insert(req.body)
+    .then((project) => {
+      project.project_completed
+        ? (project.project_completed = true)
+        : (project.project_completed = false);
+      res.status(201).json(project);
+    })
+    .catch((err) => {
+      res.status(500).json(err.message);
+    });
+});
+
 module.exports = router;
