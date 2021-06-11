@@ -7,6 +7,7 @@ router.get("/", async (req, res, next) => {
   try {
     const project = await Projects.find();
     res.json(project);
+    console.log(project);
   } catch (error) {
     next(error);
   }

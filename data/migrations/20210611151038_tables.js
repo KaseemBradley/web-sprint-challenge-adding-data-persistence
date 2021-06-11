@@ -3,7 +3,7 @@ exports.up = function (knex) {
     tbl.increments("project_id");
     tbl.text("project_name").notNullable();
     tbl.text("project_description");
-    tbl.boolean("project_completed").default(0);
+    tbl.boolean("project_completed").defaultTo(false);
   });
 };
 
